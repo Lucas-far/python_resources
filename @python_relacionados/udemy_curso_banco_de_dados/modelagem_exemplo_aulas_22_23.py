@@ -1,13 +1,13 @@
 
 
-def fonte():
-    """ Seção 3: Modelagem de Dados - 22. Exercício Modelagem de Dados """
+def fontes():
+    """
+    Seção 3: Modelagem de Dados - 22. Exercício Modelagem de Dados
+    Seção 3: Modelagem de Dados - 23. Correção Exercício Modelagem de Dados
+    """
 
 
-def fonte_2():
-    """ Seção 3: Modelagem de Dados - 23. Correção Exercício Modelagem de Dados """
-
-
+# Coletagem de dados através da interpretação do enunciado
 def aula_22():
     """
     Empresa: Fabricante de picolé
@@ -18,11 +18,11 @@ def aula_22():
     Pícolé (água) (aditivos)         1. vitaminas         | 2. sais minerais   |                    |
     Pícolé (água) (aditivos) (dados) 1. nome              | 2. fórmula química |                    |
     Pícolé (leite)                   1. conservantes      |                    |                    |
-    Pícolé (leite) (conservantes)    1. nome              | 2. Descrição       |                    |
+    Pícolé (leite) (conservantes)    1. nome              | 2. descrição       |                    |
     Pícole (água) (lote)             1. normal            |                    |                    |
     Pícole (leite) (lote)            1. ao leite          |                    |                    |
-    Revendedores (dados)             1. pessoa de contato | 2. CNPJ            | 3. Razão Social    |
-    Nota fiscal (dados)              1. data              | 2. valir           | 3. número de série | 4. descrição
+    Revendedores (dados)             1. pessoa de contato | 2. CNPJ            | 3. razão Social    |
+    Nota fiscal (dados)              1. data              | 2. validade        | 3. número de série | 4. descrição
     """
 
 
@@ -54,12 +54,14 @@ def criar_modelo_mysql_workbench():
 
     ITEM 5 (DETALHES)
     O item 5 é usado para criar relacionamentos entre tabelas (uma chave primária é usada como referência em outra)
-    As opções nesse item são: [ Foreign keys name ] [ Referenced table ] [ Foreign key columns ] [ Referenced columns ]
+    As opções nesse item são: [ Foreign key name ] [ Referenced table ] [ Column ] [ Referenced columns ]
     No Ubuntu, há uma criação de sintaxe automática o item [ Foreign keys name ]
     Essa sintaxe costuma ser [ fk_nome_da_tabela_int ]
-    A aba [ Referenced table ] faz referência à tabela que receberá a chave primária de outra tabela
-    A aba [ Foreign key columns ] faz referência ao atributo da tabela que receberá a chave primária
-    A aba [ Referenced column ] faz referência a chave primária a ser referência para uma outra tabela
+
+    A aba [ Foreign key name ]  parte da tabela que pega algo emprestado, levando o seu nome
+    A aba [ Referenced table ]  é a tabela dona de algum atributo que será herdado
+    A aba [ Column ]            atributo herdeiro
+    A aba [ Referenced column ] atributo provedor
     """
 
 
@@ -90,15 +92,17 @@ def aula_23():
     """
 
 
-# 51:02
 def aula_23_procedimentos():
     """
-    DETALHE: Atributos não numéricos parecem ser incongruentes como atributos de uma tabela matriz (que parece guardar
-             somente atributos numéricos), por isso eles estão sendo segregados em tabelas, contendo atributos numéricos
-             como chaves primaria, e o atributo não numérico em si inserido
-
-             Tabela matriz possui variados atributos numéricos (começados com id_) que são referênciados em outras
-             tabelas para chamar um atributo não numérico dentro delas
+    ----------------------------------------------------- DETALHES -----------------------------------------------------
+    TABELAS MATRIZ (PROVEDORAS DE CHAVES ESTRANGEIRAS)
+    [ aditivos_nutritivos ] (7)
+    [ sabores ]             (2)
+    [ conservantes ]        (9)
+    [ revendedores ]        (14)
+    [ tipos picole ]        (4)
+    [ tipos_embalagem ]     (3)
+    [ ingredientes ]        (5)
 
     TABELA                           NOME DO CAMPO          TIPO      CARACTERÍSTICAS
     1.1 picoles                    | id                   | INT     | PK NN AI
@@ -120,43 +124,43 @@ def aula_23_procedimentos():
     7.1 aditivos_nutritivos        | id                   | INT     | PK NN AI
     7.2 aditivos_nutritivos        | nome                 | VARCHAR | NN
     7.3 aditivos_nutritivos        | formula_quimica      | VARCHAR | NN
-    ESCRITOS, MAS NÃO CRIADOS
-    aditivos_nutritivos_picole | id                   | INT     | PK NN AI
-    aditivos_nutritivos_picole | id_aditivo_nutritivo | INT     | NN
-    aditivos_nutritivos_picole | id_picole            | INT     | NN
+    8.1 aditivos_nutritivos_picole | id                   | INT     | PK NN AI
+    8.2 aditivos_nutritivos_picole | id_aditivo_nutritivo | INT     | NN
+    8.3 aditivos_nutritivos_picole | id_picole            | INT     | NN
+    9.1 conservantes               | id                   | INT     | PK NN AI
+    9.2 conservantes               | nome                 | VARCHAR | NN
+    9.3 conservantes               | descricao            | VARCHAR | NN
+    10.1 conservantes_picole       | id                   | INT     | PK NN AI
+    10.2 conservantes_picole       | id_conservante       | INT     | NN
+    10.3 conservantes_picole       | id_picole            | INT     | NN
+    11.1 lotes                     | id                   | INT     | PK NN AI
+    11.1 lotes                     | id_tipo_picole       | INT     | NN
+    11.1 lotes                     | quantidade           | INT     | NN
+    12.1 notas_fiscais             | id                   | INT     | PK NN AI
+    12.1 notas_fiscais             | data                 | DATE    | NN
+    12.1 notas_fiscais             | valor                | DECIMAL | NN
+    12.1 notas_fiscais             | numero_serie         | VARCHAR | NN
+    12.1 notas_fiscais             | descricao            | VARCHAR | NN
+    12.1 notas_fiscais             | id_revendedor        | INT     | NN
+    13.1 lotes_nota_fiscal         | id                   | INT     | PK NN AI
+    13.2 lotes_nota_fiscal         | id_lote              | INT     | NN
+    13.3 lotes_nota_fiscal         | id_nota_fiscal       | INT     | NN
+    14.1 revendedores              | id                   | INT     | PK NN AI
+    14.1 revendedores              | cnpj                 | VARCHAR | NN
+    14.1 revendedores              | razao_social         | VARCHAR | NN
+    14.1 revendedores              | contato              | VARCHAR | NN
 
-    A partir da tabela        (7) [ picoles ]
-    Criar chave estrangeira   (7) [ fk_picoles_1 ]
-    Vindo da tabela           (2) [ sabores ]
-    Referenciando o atributo  (7) [ id_sabor ] da tabela [ picoles ]
-    Pela chave primária       (2) [ id ] da tabela [ sabores ]
-
-    A partir da tabela        (8) [ picoles ]
-    Criar chave estrangeira   (8) [ fk_picoles_2 ]
-    Vindo da tabela           (4) [tipos_embalagem ]
-    Referenciando o atributo  (8) [ id_tipo_embalagem ] da tabela [ picoles ]
-    Pela chave primária       (4) [ id ] da tabela [ tipos_embalagem ]
-
-    A partir da tabela       (11) [ picoles ]
-    Criar chave estrangeira  (11) [ fk_picoles_3 ]
-    Vindo da tabela          (9)  [ tipos_picole ]
-    Referenciando o atributo (11) [ id_tipo_picole ] da tabela [ picoles ]
-    Pela chave primária      (9)  [ id ] da tabela [ tipos_picole ]
-
-    A partir da tabela       (15) [ ingredientes_picole ]
-    Criar chave estrangeira  (15) [ fk_ingredientes_picole_1 ]
-    Vindo da tabela          (12) [ ingredientes ]
-    Referenciando o atributo (15) [ id_ingrediente ] da tabela [ ingredientes_picole ]
-    Pela chave primária      (12) [ id ] da tabela [ ingredientes ]
-
-    A partir da tabela       (16) [ ingredientes_picole ]
-    Criar chave estrangeira  (16) [ fk_ingredientes_picole_2 ]
-    Vindo da tabela          (1)  [ picoles ]
-    Referenciando o atributo (16) [ id_picole ] da tabela [ ingredientes_picole ]
-    Pela chave primária      (1)  [ id ] da tabela [ picoles ]
+    CHAVES ESTRANGEIRAS
+    NOME                               ORIGEM                 BENEFICIÁRIO                                         PROVEDORA
+    fk_picoles_1                       sabores                id_sabor (picoles)                                   id (sabores)
+    fk_picoles_2                       tipos_embalagem        id_tipo_embalagem (picoles)                          id (tipos_embalagem)
+    fk_picoles_3                       tipos_picole           id_tipo_picole (picoles)                             id (tipos_picole)
+    fk_ingredientes_picole_1           ingredientes           id_ingrediente (ingredientes_picole)                 id (ingredientes)
+    fk_ingredientes_picole_2           picoles                id_picole (ingredientes_picole)                      id (picoles)
+    fk_aditivos_nutritivos_picole_1    aditivos_nutritivos    id_aditivo_nutritivo (aditivos_nutritivos_picole)    id (aditivos nutritivos)
+    fk_aditivos_nutritivos_picole_2    picoles                id_picole (aditivos_nutritivos_picole)               id (picoles)
+    fk_lotes_1                         tipos_picole           id_tipo_picole (lotes)                               id (tipos_picole)
+    fk_lotes_nota_fiscal_1             lotes                  id_lotes (lotes_nota_fiscal)                         id (lotes)
+    fk_lotes_nota_fiscal_2             notas_fiscais          id_nota_fiscal (lotes_nota_fiscal)                   id (notas fiscais)
+    fk_notas_fiscais                   revendedores           id_revendedor (notas_fiscais)                        id (revendedores)
     """
-    # A partir da tabela          () []
-    # Criar chave estrangeira     []
-    # Requisitar da tabela        () []
-    # Para referenciar o atributo () []
-    # A chave primária            () []
