@@ -52,7 +52,7 @@ def forma_2():
     - Você voltara ao ambiente que você criou
 
     ----------------------------------------------------- DETALHE -----------------------------------------------------
-    - Qualquer arquivo [ python ] criado, ao entrar, este precisa estar configurado para execução pelo ambiente virtual
-    - Para isso, abra o arquivo no Jupyter. Na aba [ Kernel ] fazer [ change kernel ] [ clicar no ambiente virtual ]
-    - O comando ativa o ambiente virtual e configura ele para ser o executador dos arquivos python
+    - Qualquer arquivo [ python ] criado, ao ser acessado, precisa estar configurado p/ execução pelo ambiente virtual
+    - Para isso, abra este arquivo no Jupyter. Na aba [ Kernel ] fazer [ change kernel ] [ clicar no ambiente virtual ]
+    - O comando ativa o ambiente virtual no [ computador jupyter ] e configura ele p/ executar arquivos python
     """
