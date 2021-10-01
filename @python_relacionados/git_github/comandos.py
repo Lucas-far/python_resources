@@ -3,14 +3,14 @@
 def comandos():
     """
     ---------------------------------------------------- git add . ----------------------------------------------------
-        • adiciona módulos modificados para a fila de 'commit'
-        -> se este módulo for editado antes do 'commit', ele volta um estágio, precisando ser adicionado novamente
+        • adiciona arquivos para a fila de 'commit'
+        -> se este arquivo for editado antes do 'commit', ele volta um estágio, precisando ser adicionado novamente
 
     ---------------------------------------------------- git branch ----------------------------------------------------
-        • retorna a(s) 'Branch(es)' existente(s) no repositório, dando ênfase em * para a logada
+        • retorna o(s) 'Branch(es)' existente(s) no repositório local (o branch com * é o que está logado)
 
     ------------------------------------------------- git branch nome -------------------------------------------------
-        • criar um 'Branch' e loga nela
+        • criar um 'Branch' e loga nele
 
     ------------------------------------------------ git checkout nome ------------------------------------------------
         • logar em um 'Branch' especificado

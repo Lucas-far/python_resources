@@ -179,7 +179,7 @@ def aula_20_e_21():
     1 - Inicialmente, qualquer repositório iniciado, possui um branch local padrão [ master ]
     2 - Vamos criar um segundo branch local
     3 - git checkout -b master2
-    4 - touch a.py
+    4 - touch parte_2.py
     5 - Adicionando conteúdo ao arquivo:
 
     def greet(name='person') -> str:
@@ -189,8 +189,8 @@ def aula_20_e_21():
         print(greet('Lucas'))
 
     6 - git add .
-    7 - git commit -m 'added: a.py'
-    8 - git checkout master -----------------> é possível ver que o arquivo [ a.py ], irá sumir do branch [ master ]
+    7 - git commit -m 'added: parte_2.py'
+    8 - git checkout master -----------------> é possível ver que o arquivo [ parte_2.py ], irá sumir do branch [ master ]
                             * ao executar COMMIT no branch local [ master2 ], é assegurado sua posse ao arquivo
                             * portante, ao logar em um outro branch, arquivos de outros branches, somem
     9 - git checkout master2 -----------------------------> ao retornar ao branch criador, o arquivo volta a reaparecer

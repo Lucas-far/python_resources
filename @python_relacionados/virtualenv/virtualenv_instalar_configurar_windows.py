@@ -2,15 +2,17 @@
 
 def python_instalar():
     """
-    Baixar o python
-    No instalador, marcar o [ add python to PATH ]
-    O python precisa de duas variáveis de sistema: uma para o interpretador, e a outra para o pip
+    1 - Baixar o python (não esquecer de marcar [ add python to PATH ] na instalação)
+    2 - O python precisa de duas variáveis de sistema: uma para o interpretador, e a outra para o pip
 
     Interpretador || C:\Users\nome_user\AppData\Local\Programs\Python\Python39
     Pip           || C:\Users\Conta secundária\AppData\Local\Programs\Python\Python39\Scripts
 
-    Ao final da instalação, abrir o terminal e testar comandos
-    [ python / python -V / pip -V / pip install --upgrade pip ]
+    ------------------------------------------------------- OBS -------------------------------------------------------
+    - O path do interpretador já deve vir configurado, mas caso não seja, fazer através do caminho especificado acima
+
+    3- Ao final da instalação, abrir o terminal e testar comandos
+       [ python / python -V / pip -V / pip install --upgrade pip ]
     """
 
 
