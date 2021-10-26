@@ -14,9 +14,9 @@ def mtd_lotofacil_check_void_bigger_than_3(the_game, first_index: int = 0, secon
 
     for number in box:
         if number in voids_not_allowed:
-            print(box)
+            # print(box)    # if it is desired to check if there is a number equals to or bigger than 4
             return False  # if the void of the calculus is >= 4, then return false
-    print(box)
+    # print(box)            # if it is desired to check if there is a number equals to or bigger than 4
     return True           # if the game is standard, acceptable
 
 

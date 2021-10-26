@@ -38,34 +38,34 @@ while counter < number_of_games:
 
     game_created_overall_score = mtd_lotofacil_check_game_overall_score(the_game=game_created, games_compared=dtb)
 
-    print(f"""
-    Sequência de 15 números que representa um jogo dessa loteria
-    {mtd_painter_random(label=str(game_created))}""")
-
-    print(f"""
-    Lista contendo 5 inteiros representando a quantidade de cada número nas partes horizontais do volante 
-    {mtd_painter_random(label=str(game_created_horizontal_sequence))}""")
-
-    print(f"""
-    Lista contendo 5 inteiros representando a quantidade de cada número nas partes verticais do volante 
-    {mtd_painter_random(label=str(game_created_vertical_sequence))}""")
-
-    print(f"""
-    Cálculo de índices, por exemplo, i[1] - i[0]...i[2] - i[1] e assim suscetivamente
-    Os cálculos são inseridos em um lista, que será percorrida e verificada
-    Se o jogo possuir um vácuo normal (até 3):  retorno é True
-    Se o jogo possuir um vácuo normal (+ de 3): retorno é False
-    {mtd_painter_random(label=str(game_created_voids))}""")
-
-    print(f"""
-    Se a sequência de números seguidos for igual ou maior que 7: retorna True
-    Se a sequência de números seguidos menor que 7:              retorna False
-    {mtd_painter_random(label=str(game_created_sequence_in_a_row))}""")
-
-    print(f"""
-    Se a quantidade de números primos no jogo for entre 6 para 8:      retorno é True 
-    Se a quantidade de números primos no jogo for entre 1 para 5 ou 9: retorno é False 
-    {mtd_painter_random(label=str(game_created_prime_numbers))}""")
+    # print(f"""
+    # Sequência de 15 números que representa um jogo dessa loteria
+    # {mtd_painter_random(label=str(game_created))}""")
+    #
+    # print(f"""
+    # Lista contendo 5 inteiros representando a quantidade de cada número nas partes horizontais do volante
+    # {mtd_painter_random(label=str(game_created_horizontal_sequence))}""")
+    #
+    # print(f"""
+    # Lista contendo 5 inteiros representando a quantidade de cada número nas partes verticais do volante
+    # {mtd_painter_random(label=str(game_created_vertical_sequence))}""")
+    #
+    # print(f"""
+    # Cálculo de índices, por exemplo, i[1] - i[0]...i[2] - i[1] e assim suscetivamente
+    # Os cálculos são inseridos em um lista, que será percorrida e verificada
+    # Se o jogo possuir um vácuo normal (até 3):  retorno é True
+    # Se o jogo possuir um vácuo normal (+ de 3): retorno é False
+    # {mtd_painter_random(label=str(game_created_voids))}""")
+    #
+    # print(f"""
+    # Se a sequência de números seguidos for igual ou maior que 7: retorna True
+    # Se a sequência de números seguidos menor que 7:              retorna False
+    # {mtd_painter_random(label=str(game_created_sequence_in_a_row))}""")
+    #
+    # print(f"""
+    # Se a quantidade de números primos no jogo for entre 6 para 8:      retorno é True
+    # Se a quantidade de números primos no jogo for entre 1 para 5 ou 9: retorno é False
+    # {mtd_painter_random(label=str(game_created_prime_numbers))}""")
 
     if game_created_voids:
         if game_created_sequence_in_a_row:
@@ -79,18 +79,20 @@ while counter < number_of_games:
                                 if 0 not in game_created_vertical_sequence:
 
                                     counter += 1
-                                    print(game_created_overall_score)
-                                    with open('games_storage.txt', 'a') as doc:
-                                        doc.write('\n')
-                                        doc.write(str('    Seq. horizontal: '))
-                                        doc.write(str(game_created_horizontal_sequence))
-                                        doc.write('\n')
-                                        doc.write(str('    Seq. vertical: '))
-                                        doc.write(str(game_created_vertical_sequence))
-                                        doc.write('\n')
-                                        doc.write(str(game_created_overall_score))
-                                        doc.write('\n')
+                                    # print(game_created_overall_score)
+                                    # with open('games_storage.txt', 'a') as doc:
+                                    #     doc.write('\n')
+                                    #     doc.write(str('    Seq. horizontal: '))
+                                    #     doc.write(str(game_created_horizontal_sequence))
+                                    #     doc.write('\n')
+                                    #     doc.write(str('    Seq. vertical: '))
+                                    #     doc.write(str(game_created_vertical_sequence))
+                                    #     doc.write('\n')
+                                    #     doc.write(str(game_created_overall_score))
+                                    #     doc.write('\n')
+
+                                    print(f'{counter}    {game_created}    {game_created_horizontal_sequence}    {game_created_vertical_sequence}')
 
     else:
         attempts += 1
-        print(progress_frame)
+        # print(progress_frame)
