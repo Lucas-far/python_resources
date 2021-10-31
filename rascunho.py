@@ -17,3 +17,7 @@
 #     counter += 1
 #
 # print(dicio)
+
+teste = set({})
+teste.add(tuple(range(1, 16)))
+print(teste)

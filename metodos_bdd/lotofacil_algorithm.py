@@ -24,6 +24,11 @@ counter = 0
 algorithm_start = datetime.now()
 progress_frame = f'------- Tentativas: {attempts} | Jogos registrados: {counter}/{number_of_games} -------'
 
+games = set({})
+horizontal = set({})
+vertical = set({})
+primes = set({})
+
 while counter < number_of_games:
 
     game_created = mtd_lotofacil_create_game(length=15)
@@ -90,9 +95,31 @@ while counter < number_of_games:
                                     #     doc.write('\n')
                                     #     doc.write(str(game_created_overall_score))
                                     #     doc.write('\n')
+                                    print(f'{counter}    {game_created}    {game_created_prime_numbers}    {game_created_horizontal_sequence}    {game_created_vertical_sequence}')
 
-                                    print(f'{counter}    {game_created}    {game_created_horizontal_sequence}    {game_created_vertical_sequence}')
+                                    games.add(tuple(game_created))
+                                    horizontal.add(tuple(game_created_horizontal_sequence))
+                                    vertical.add(tuple(game_created_vertical_sequence))
+                                    primes.add(tuple(game_created_vertical_sequence))
 
+                                    # counter2 = 0
+                                    # games.add(tuple(game_created))
+                                    # horizontal.add(tuple(game_created_horizontal_sequence))
+                                    # vertical.add(tuple(game_created_vertical_sequence))
+                                    # primes.add(tuple(game_created_vertical_sequence))
+                                    # if len(games) == 15 and len(primes) == 15 and len(horizontal) == 15 and len(vertical) == 15:
+                                    #
+                                    #     while counter2 < 15:
+                                    #         print(f'{counter + 1}    {list(games)[counter2]}    {list(primes)[counter2]}    {list(horizontal)[counter2]}    {list(vertical)[counter2]}')
+                                    #         counter2 += 1
     else:
         attempts += 1
         # print(progress_frame)
+
+print(countage := f"""
+    ---------- TABELA ----------
+    {len(games)}
+    {len(horizontal)}
+    {len(vertical)}
+    {len(primes)}
+    """)
