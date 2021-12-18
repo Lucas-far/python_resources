@@ -25,78 +25,6 @@
 # NACIONALIDADE
 "======================================================================================================================"
 
-# lipwlb7m4kqr6ftjhbngzyswr17r569ywdznmc3bkphpw1ly6qn3kf8svctazve4kvw9pcutovfqz7epd41or9u8m6qcx3wlhlsu
-# round
-# [ aproximador de números inteiros ] [ critério para menos <= 5 <= para mais ] [ redutor de casas decimais ]
-"======================================================================================================================"
-contexto = ['print', 'valor da variável', 'variável própria', 'variável nova']
-
-flutuante = 115.77  # valor acima da metade de 1 [ + 1 ]
-flutuante2 = round(flutuante)
-print(flutuante2)   # 116
-
-flutuante = 115.49  # valor abaixo da metade de 1 [ - 1 ]
-flutuante2 = round(flutuante)
-print(flutuante2)   # 115
-
-# Redutor de casas decimais
-flutuant3 = 115.7844
-print(round(flutuante3, 2))  # 115.78
-"======================================================================================================================"
-
-
-
-# xk8vmepy82jv4spuo7rmjunuxbutogq4fgoyoolepyw3xi94q5c1vyyeoz9gg7o15f7jfuowlu3axz4uuioq9vu9dcmgyx6b8x7j
-# saída de dados
-# [ %s {} f{} = caracteres especiais com ou sem letra para adição de texto ] [ usada em contexto normal ou em input ]
-"======================================================================================================================"
-# CONTEXTO DE INPUT % COM UM ARGUMENTO
-nome = input('Qual o seu nome? -> ')
-print('Obrigado, %s' % nome)
-
-# CONTEXTO NORMAL % COM MÚLTIPLOS ARGUMENTOS
-nome, sobrenome = 'Lucas', 'Farias'
-print('Olá, %s %s' % (nome, sobrenome))
-
-# CONTEXTO INPUT {} COM 1 ARGUMENTO
-nacionalidade = input('Qual a sua nacionalidade?')
-print('Legal, você é {}'.format(nacionalidade))
-
-# CONTEXTO NORMAL {} COM MÚLTIPLOS ARGUMENTO
-animal, pessoa = 'rato', 'rei'
-print('O {} roeu a roupa do {} de Roma'.format(animal, pessoa))
-
-# CONTEXTO DE INPUT f{} COM UM ARGUMENTO
-idade = input('Qual a sua idade?? ->')
-print(f'Certo, {idade} anos de idade')
-
-# CONTEXTO NORMAL f{} COM MÚLTIPLOS ARGUMENTOS
-print(f'Cala a boca, {nome.upper()}, e você também, {"-".join(sobrenome)}')
-"======================================================================================================================"
-
-
-
-# 9p772unfq9ekiudcb9o3tjqa65ha97h1ackwmuqq7dzuclyfx3m7dv2jg2q51ybwfhi4xxui6r1txxir8axeekyjud2dslzgdukv
-# scandir [ similar listdir ] [ métodos aninhados ]
-# [ 1 arg = string do caminho] [ sistema operacional ] [ gerenciamento de arquivos ]
-# [ listador de arquivos em diretório ] [ gerenciamento indexado de dados ]
-# [ métodos aninhados para obtenção de informações restritas ]
-"======================================================================================================================"
-from os import scandir
-
-local = tuple(scandir('C:\\Users\\Lucas\\Desktop'))
-print(local)
-
-print(local[1].inode())       # 41376821576473041
-print(local[1].is_dir())      # False
-print(local[1].is_file())     # True
-print(local[1].is_symlink())  # False
-print(local[1].name)          # Downloads.lnk
-print(local[1].path)          # C:\Users\Lucas\Desktop\Downloads.lnk
-print(local[1].stat)          #
-print(local[1].close())       #
-"======================================================================================================================"
-
 
 
 # todo há algo errado
@@ -175,21 +103,6 @@ class AndroidTestes(TestCase):
 if __name__ == '__main__':
     main()
 "======================================================================================================================"
-
-
-
-# e7t2vqoka9is4ojnmeulaodpde7f7vpbn6bqvqufwdd8q29qnqwjzyccfuxmvu15yzw5caf7wnjnxc1amg5vl4janhw79cw8ryom
-# shuffle
-# [ importação mandatória ] [ desorganizador aleatório de dados em classes iteráveis ] [ 1 arg = itera lit/var ]
-"======================================================================================================================"
-contexto = ['pós-variável']
-from random import shuffle
-
-lista = ['...', False, 2020, '_'.join('Lucas'[::-1]), '{}'.format([dados for dados in range(1, 8)])]
-shuffle(lista)
-print(lista)  # [2020, 's_a_c_u_L', False, '[1, 2, 3, 4, 5, 6, 7]', '...']
-"======================================================================================================================"
-
 
 
 # 7dt8lkriaqgxxr1grcwvrxnp3o1ybjxux7ep8tglbut9www2ie9nkxyce226dbwpwsbdxop23cqjdtvoyhfdtx69ahpwyqqwy9bi
