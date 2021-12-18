@@ -35,3 +35,8 @@ if __name__ == '__main__':
     print([5], '{:.4f}'.format(obj))
     print([6], f'{elevar(2, 2.2):.5f}')
     print([7], '{:.7f}'.format(elevar(2, 2.2)))
+
+    # -------------------------------------------- Outro tipo de formatação --------------------------------------------
+    nome = ' Python '
+    nome_ = f" {nome:-^100} "
+    print([8], nome_)
